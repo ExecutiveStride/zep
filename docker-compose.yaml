@@ -42,7 +42,7 @@ services:
     ports:
       - "4000:8000"
     volumes:
-      - ./config.yaml:/app/config.yaml
+      - '/data/coolify/applications/i4kw8cg/config.yaml:/app/config.yaml'
     environment:
       - ZEP_LOG_LEVEL=debug
       - ZEP_STORE_TYPE=postgres
