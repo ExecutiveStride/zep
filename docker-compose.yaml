@@ -1,6 +1,8 @@
 services:
   db:
     image: ghcr.io/getzep/postgres:latest
+    env_file:
+      - ./.env  
     container_name: zep-postgres
     restart: on-failure
     shm_size: "128mb"
@@ -19,6 +21,8 @@ services:
 
   nlp:
     image: ghcr.io/getzep/zep-nlp-server:latest
+    env_file:
+      - ./.env  
     container_name: zep-nlp
     restart: on-failure
     networks:
@@ -32,6 +36,8 @@ services:
 
   zep:
     image: ghcr.io/getzep/zep-cloud:latest
+    env_file:
+      - ./.env  
     container_name: zep
     restart: on-failure
     depends_on:
