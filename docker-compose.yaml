@@ -1,6 +1,6 @@
 services:
   db:
-    image: ghcr.io/getzep/zep-cloud:latest
+    image: ghcr.io/getzep/postgres:latest
     container_name: zep-postgres
     restart: on-failure
     shm_size: "128mb" # Increase this if vacuuming fails with a "no space left on device" error
@@ -34,7 +34,7 @@ services:
       retries: 5
       start_period: 45s
   zep:
-    image: ghcr.io/getzep/zep:latest
+    image: ghcr.io/getzep/zep-cloud:latest
     container_name: zep
     restart: on-failure
     depends_on:
