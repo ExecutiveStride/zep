@@ -1,6 +1,12 @@
 services:
   db:
     image: ghcr.io/getzep/postgres:latest
+    entrypoint: ["/bin/sh", "-c"]
+    command: 
+      - |
+        export ZEP_STORE_TYPE=postgres
+        echo "ZEP_STORE_TYPE is set to: $ZEP_STORE_TYPE"
+        exec /app/zep
     env_file:
       - ./.env  
     container_name: zep-postgres
