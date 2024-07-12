@@ -1,7 +1,6 @@
 services:
   db:
     image: ghcr.io/getzep/postgres:latest
-    entrypoint: ["/bin/sh", "-c"]
     env_file:
       - ./.env  
     container_name: zep-postgres
