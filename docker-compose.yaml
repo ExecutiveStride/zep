@@ -1,3 +1,4 @@
+version: '3.8'
 services:
   db:
     image: ghcr.io/getzep/postgres:latest
@@ -54,7 +55,7 @@ services:
     ports:
       - "4000:8000"
     volumes:
-      - ./config.yaml:/app/config.yaml
+      - ~/repos/zep/config.yaml:/app/config.yaml
     environment:
       - ZEP_LOG_LEVEL=debug
       - ZEP_STORE_TYPE=postgres
